@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(2,4,4);
+            background: linear-gradient(90deg, rgba(2,4,4,1) 32%, rgba(11,9,80,1) 100%, rgba(21,20,133,1) 100%, rgba(35,35,206,0.9109907390690651) 100%, rgba(0,212,255,1) 100%);
+        }
+        .calc{
+            text-align: center;
+            width: 170px;
+            display: flex;
+            flex-direction: column;
+        }
+        .top_section{
+            background: linear-gradient(90deg, rgba(2,4,4,1) 32%, rgba(11,9,80,1) 100%, rgba(21,20,133,1) 100%, rgba(35,35,206,0.9109907390690651) 100%, rgba(0,212,255,1) 100%);
+            height: 60px;
+            justify-content: end;
+            display: flex;
+            align-items: last baseline;
+            border: 2px inset black;
+        }
+        .screen{
+            color: white;
+            margin-right: 3px;
+        }
+        .bottom_sec{
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            background-color: black;
+        }
+            
+        
+        .top_container{
+            width:167px;
+            display: flex;
+        }
+        .bottom_container{
+            display: flex;
+        }
+        .container_left{
+            margin-right: -5px;
+            height:160px;
+            width:125px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container_right{
+            margin: 0;
+        }
+        .flex_item{
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            border-radius: 20px;
+        }
+        .btn{
+            font-size: 16px;
+            cursor: pointer;
+    transition: opacity 0.3s;
+            color: white;
+            background-color: black;
+            border: none;
+        }
+        .other_btn{
+            font-size: 16px;
+            cursor: pointer;
+    transition: opacity 0.3s;
+            color:aqua;
+            background-color: black;
+            border: none;
+        }
+        .btn:hover,
+        .other_btn:hover{
+            opacity: 0.5 ;
+        }
+        .btn:active,
+        .other_btn:active{
+            opacity: 0.2 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <div class="top_section" id="topSec">
+            <span class="screen" id="myScreen">
+                Click OFF to turn off
+            </span>
+        </div>
+    <div class="bottom_sec">
+        <div class="top_container">
+            <div class="flex_item">
+                <button class="other_btn" id="acBtn" onclick="toggleScreen()" style="color: red;">OFF</button>
+            </div>
+        <div class="flex_item"><button class="other_btn" id="input_btn" onclick="appendOperator('%')">%</button></div>
+        <div class="flex_item"><button class="other_btn" onclick="clearScreen()">C</button></div>
+        <div class="flex_item"><button class="other_btn" id="input_btn" onclick="appendOperator('/')">/</button></div>
+        </div>
+    <div class="bottom_container">
+    <div class="container_left">
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(1)">1</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(2)">2</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(3)">3</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(4)">4</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(5)">5</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(6)">6</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(7)">7</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(8)">8</button></div>
+        <div class="flex_item"><button class="btn" id="input_btn" onclick="appendNumber(9)">9</button></div>
+        <div class="flex_item" style="width: 60px;"><button class="btn" id="input_btn" onclick="appendNumber(0)">0</button></div>
+        <div class="flex_item" style="width: 60px;"><button class="btn" id="input_btn" onclick="appendDot('.')">.</button></div>
+            
+    </div>
+    <div class="container_right">
+        <div class="flex_item"><button class="other_btn" id="input_btn" onclick="appendOperator('*')">x</button></div>
+        <div class="flex_item"><button class="other_btn" id="input_btn" onclick="appendOperator('-')">-</button></div>
+        <div class="flex_item"><button class="other_btn" id="input_btn" onclick="appendOperator('+')">+</button></div>
+        <div class="flex_item"><button class="other_btn" id="input_btn" onclick="calculate()">=</button></div>
+    </div>
+</div>
+</div>
+</div>
+<script src="calculator.js"></script>
+</body>
+</html>
