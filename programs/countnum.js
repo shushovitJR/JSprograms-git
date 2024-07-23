@@ -14,5 +14,5 @@ document.getElementById("nextbtn").onclick = function(){
 let rnum;
 document.getElementById("randombtn").onclick = function(){
     rnum = Math.floor(Math.random()*(100+1) + 0);
-    document.getElementById("randomnumber").innerHTML = rnum;
+    document.getElementById("number0").innerHTML = rnum;
 }
